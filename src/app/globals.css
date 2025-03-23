@@ -1,0 +1,60 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+
+    --radius: 0.5rem;
+    --background: #ffffff; /* Light mode background */
+    --foreground: #000000; /* Light mode foreground */
+    color-scheme: light dark;
+    
+  }
+}
+html, body {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+.services-section, .services-page {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Keeps background fixed */
+}
+.services-section, .top-section-bg {
+ 
+  background-image: url('/images/services-bg.jpg');  
+ 
+}
+/* Define a background image class */
+.top-section-bg {
+  /* background-image: url('/images/services-bg.jpg');  */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.services-overlay, .services-overlay-page {
+  position: absolute;
+  inset: 0;
+   
+}
+.services-overlay {
+ 
+  background-color: rgba(0, 0, 0, 0.85);  
+}
+
+
+
+
+
+ 
+
+   
