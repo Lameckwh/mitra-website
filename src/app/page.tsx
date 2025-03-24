@@ -109,7 +109,7 @@ export default function Home() {
         <div className="relative z-10 w-full max-w-lg md:max-w-2xl px-4 md:px-0 text-center text-gray-900 dark:text-white">
           <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6">About Us</h2>
           <p className="text-base md:text-lg">
-            At Mitra, we combine cutting-edge technology with expert support to
+            Lameck, At Mitra, we combine cutting-edge technology with expert support to
             deliver exceptional solutions to our clients. Our journey is defined
             by innovation, commitment, and a passion for excellence.
           </p>
