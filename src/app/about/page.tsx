@@ -27,20 +27,29 @@ const Page = () => {
   return (
     <div className="bg-gray-100 dark:bg-gray-900 text-black dark:text-white min-h-screen">
       {/* Hero Section with Background Image */}
-      <section className="relative h-[50vh] md:h-[60vh] flex items-center justify-center bg-[url('/images/about-bg.jpg')] bg-cover bg-center">
-        <div className="absolute inset-0 bg-gray-900 opacity-80 z-0" /> {/* Teal overlay */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-          className="relative z-10 text-center text-white px-4 md:px-8"
-        >
-          <h1 className="text-2xl md:text-4xl font-extrabold mb-4 drop-shadow-lg">About Us</h1>
-          <p className="text-base md:text-lg max-w-lg md:max-w-2xl mx-auto drop-shadow-md">
-            Your trusted partner for IBM hardware infrastructure solutions.
-          </p>
-        </motion.div>
-      </section>
+      <section className="relative h-[50vh] md:h-[60vh] flex items-center justify-center">
+  <Image
+    src="/images/about-bg.webp"
+    alt="About Us Background"
+    layout="fill"
+    objectFit="cover"
+    // quality={75}
+    priority={true}
+    className="z-0"
+  />
+  <div className="absolute inset-0 bg-gray-900 opacity-80 z-0" />
+  <motion.div
+    initial={{ opacity: 0, scale: 0.95 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 1 }}
+    className="relative z-10 text-center text-white px-4 md:px-8"
+  >
+    <h1 className="text-2xl md:text-4xl font-extrabold mb-4 drop-shadow-lg">About Us</h1>
+    <p className="text-base md:text-lg max-w-lg md:max-w-2xl mx-auto drop-shadow-md">
+      Your trusted partner for IBM hardware infrastructure solutions.
+    </p>
+  </motion.div>
+</section>
 
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 md:px-8 -mt-10 md:-mt-16 relative z-10">
@@ -82,34 +91,33 @@ const Page = () => {
             <div className="md:hidden space-y-4">
               {/* Top Row */}
               <motion.div
-                className="flex space-x-3"
-                animate={{ x: ["0%", "-50%"] }}
-                transition={{
-                  x: {
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    duration: 15,
-                    ease: "linear",
-                  },
-                }}
-              >
-                {topRow.concat(topRow).map((partner, index) => (
-                  <div
-                    key={index}
-                    className="min-w-[100px] p-2 bg-white shadow rounded flex flex-col items-center justify-center flex-shrink-0"
-                  >
-                    <Image
-                      src={partner.img}
-                      alt={partner.name}
-                      width={40}
-                      height={40}
-                      className="w-10 h-10 object-contain mb-1"
-                      unoptimized
-                    />
-                    <p className="text-[10px] font-semibold text-center dark:text-gray-900">{partner.name}</p>
-                  </div>
-                ))}
-              </motion.div>
+  className="flex space-x-3"
+  animate={{ x: ["0%", "-50%"] }}
+  transition={{
+    x: {
+      repeat: Infinity,
+      repeatType: "loop",
+      duration: 15,
+      ease: "linear",
+    },
+  }}
+>
+  {topRow.concat(topRow).map((partner, index) => (
+    <div
+      key={index}
+      className="min-w-[100px] p-2 bg-white shadow rounded flex flex-col items-center justify-center flex-shrink-0"
+    >
+      <Image
+        src={partner.img}
+        alt={partner.name}
+        width={40}
+        height={40}
+        className="w-10 h-10 object-contain mb-1"
+      />
+      <p className="text-[10px] font-semibold text-center dark:text-gray-900">{partner.name}</p>
+    </div>
+  ))}
+</motion.div>
 
               {/* Bottom Row */}
               <motion.div

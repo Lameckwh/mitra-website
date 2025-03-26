@@ -1,13 +1,14 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { cardItems } from '@/utils/services';
 import { ServicesCards } from '@/components/ui/ServicesCards';
 import { ArrowUp } from 'lucide-react';
+import Head from 'next/head';
 
 const Page = () => {
-  const [mounted, setMounted] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 300); // Show button after scrolling 300px
@@ -21,13 +22,6 @@ const Page = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
- 
-
   if (!cardItems || cardItems.length === 0) {
     return (
       <div className="min-h-screen bg-white dark:bg-gray-900 flex items-center justify-center text-gray-700 dark:text-gray-300">
@@ -38,60 +32,37 @@ const Page = () => {
 
   return (
     <div className="bg-white dark:bg-gray-900 text-black dark:text-white min-h-screen">
+      <Head>
+        <link rel="preload" href="/videos/bi.webm" as="video" type="video/webm" />
+      </Head>
       {/* Hero Section */}
       <section className="relative h-[60vh] sm:h-[70vh] md:h-[70vh] flex flex-col items-center justify-center text-center overflow-hidden">
-        {/* Video */}
-        {mounted ? (
-          <AnimatePresence>
-            <motion.video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover z-0"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-            >
-              <source src="/videos/bi.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </motion.video>
-          </AnimatePresence>
-        ) : (
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover z-0"
-          >
-            <source src="/videos/bi.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        )}
+        <motion.video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/bi-poster.webp"
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <source src="/videos/bi.webm" type="video/webm" />
+          <source src="/videos/bi.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </motion.video>
 
-        {/* Gradient Overlay */}
-        {mounted ? (
-          <motion.div
-            className="absolute inset-0 z-10"
-            style={{
-              background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(50, 50, 150, 0.8) 100%)',
-            }}
-            initial={{ opacity: 0.9 }}
-            animate={{ opacity: [0.9, 0.8, 0.6] }}
-            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-          />
-        ) : (
-          <div
-            className="absolute inset-0 z-10"
-            style={{
-              background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(50, 50, 150, 0.8) 100%)',
-              opacity: 0.9,
-            }}
-          />
-        )}
+        <motion.div
+          className="absolute inset-0 z-10"
+          style={{
+            background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(50, 50, 150, 0.8) 100%)',
+          }}
+          initial={{ opacity: 0.9 }}
+          animate={{ opacity: [0.9, 0.8, 0.6] }}
+          transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+        />
 
-        {/* Text Content */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -129,7 +100,6 @@ const Page = () => {
         >
           <ArrowUp size={24} />
         </button>
-
       )}
     </div>
   );
