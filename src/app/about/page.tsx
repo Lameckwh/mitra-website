@@ -41,7 +41,7 @@ const Page = () => {
           transition={{ duration: 1 }}
           className="relative z-10 text-center text-white px-4 md:px-8"
         >
-          <h1 className="text-2xl md:text-4xl font-extrabold mb-4 drop-shadow-lg">About Us</h1>
+          <h1 className="text-2xl md:text-4xl font-extrabold mb-4 drop-shadow-lg">About Us1</h1>
           <p className="text-base md:text-lg max-w-lg md:max-w-2xl mx-auto drop-shadow-md">
             Your trusted partner for IBM hardware infrastructure solutions.
           </p>
