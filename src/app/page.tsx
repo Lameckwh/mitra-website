@@ -8,7 +8,6 @@ import { partners } from "@/utils/partners";
 import Image from "next/image";
 import { ArrowUp } from "lucide-react";
 import { ServicesHome } from "@/components/ui/ServicesHome";
-import Link from "next/link";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -86,12 +85,10 @@ export default function Home() {
             Welcome to Mitra Systems Ltd
           </motion.h1>
           <TextGenerateEffect words={generateText} duration={0.5} filter={true} />
-          <Link href="/about" className="mt-4 text-white hover:underline">
-            Learn More About Us
-          </Link>
         </div>
       </section>
 
+      {/* Rest of the component remains unchanged */}
       <motion.section
         className="min-h-[50vh] md:min-h-screen bg-gray-100 flex flex-col justify-center"
         initial={{ opacity: 0, y: 50 }}
