@@ -1,5 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import 'nprogress/nprogress.css';
+
+/* Optional: Customize the bar’s color and height */
+#nprogress .bar {
+  background: #07B0F1; /* Matches your primary color from tailwind.config.ts */
+  height: 3px; /* Slightly thicker for visibility */
+}
 
 @tailwind base;
 @tailwind components;
@@ -18,7 +25,11 @@
 html, body {
   font-family: 'Poppins', sans-serif;
 }
-
+@media (min-width: 1024px) {
+  .desktop-menu {
+    display: flex !important;
+  }
+}
 
 
 .services-section, .services-page {

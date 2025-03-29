@@ -136,14 +136,17 @@ const Navbar: React.FC = () => {
           </ul>
         </div>
         <div className="relative w-20 h-8">
+          <Link href="/">
           <Image
-            src="/images/logo.png"
+            src="/images/logo.webp"
             alt="Mitra Logo"
             width={60}
             height={50}
             className="object-contain"
             priority
           />
+          </Link>
+
         </div>
       </div>
 
@@ -178,6 +181,8 @@ const Navbar: React.FC = () => {
       </div>
 
       <div className="navbar-end pr-4">
+      {/* <span className="font-normal mr-1">+265 (0)97 7977165</span> */}
+
         {mounted && (
           <button
             type="button"

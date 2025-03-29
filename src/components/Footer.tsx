@@ -19,20 +19,20 @@ const Footer: React.FC = () => {
         </aside>
         <nav>
           <h6 className="footer-title">Services</h6>
-          <Link href="#" className="link link-hover">Network Solutions</Link>
-          <Link href="#" className="link link-hover">Data Center Services</Link>
-          <Link href="#" className="link link-hover">Cyber Security Solutions</Link>
-          <Link href="#" className="link link-hover">Business Intelligence</Link>
-          <Link href="#" className="link link-hover">Systems Development</Link>
+          <Link href="/services/network-solutions" className="link link-hover">Network Solutions</Link>
+          <Link href="/services/data-center-solutions" className="link link-hover">Data Center Solutions</Link>
+          <Link href="/services/cyber-security-solutions" className="link link-hover">Cyber Security Solutions</Link>
+          <Link href="/services/business-intelligence-analytics" className="link link-hover">Business Intelligence</Link>
+          <Link href="/services/software-development-and-database-solutions" className="link link-hover">Systems Development</Link>
         </nav>
         <nav>
           <h6 className="footer-title">Company</h6>
 
-          <Link href="" className="link link-hover">Home</Link>
-          <Link href="#" className="link link-hover">About us</Link>
-          <Link href="#" className="link link-hover">Services</Link>
-          <Link href="#" className="link link-hover">Contact Us</Link>
-          <Link href="#" className="link link-hover">News</Link>
+          <Link href="/" className="link link-hover">Home</Link>
+          <Link href="/about" className="link link-hover">About us</Link>
+          <Link href="/services" className="link link-hover">Services</Link>
+          <Link href="/contact" className="link link-hover">Contact Us</Link>
+          <Link href="/news" className="link link-hover">News</Link>
         </nav>
         <nav>
           <h6 className="footer-title">Legal</h6>
